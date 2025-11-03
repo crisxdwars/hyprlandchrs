@@ -1,0 +1,62 @@
+{
+    // Position the bar at the top
+    "position": "top",
+    
+    // Set bar-specific classes or styles
+    "layer": "top", 
+    "margin-top": 0,
+    "margin-bottom": 0,
+    
+    // Modules to be displayed
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray", 
+        "custom/clock",
+        "pulseaudio" 
+        
+    ],
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-bluetooth": "{icon}  {volume}% ",
+        "format-muted": "{volume}%", 
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "max-volume": 150 
+    },
+
+    "custom/arch": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "#", 
+        "on-click-middle": "#"
+    },
+    
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "sort-by-number": true,
+        "format-icons": {
+            "active": "●",
+            "default": "○",
+            "urgent": "!"
+        },
+        "on-click": "activate"
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+"custom/clock": {
+    "exec": "bash -c \"date '+%I:%M %p'\"",
+    "format": "| {} |",
+    "interval": 1,
+    "tooltip": false
+}}
