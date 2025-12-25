@@ -11,7 +11,7 @@
 /* Main Bar Container */
 #waybar {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    border-bottom: 1px solid #b1b1b1; /* A subtle color line at the bottom */
+    border-bottom: 1px solid rgba(135, 135, 135, 0.137); /* A subtle color line at the bottom */
     transition: background-color 0.5s;
 }
 
