@@ -1,0 +1,9 @@
+allow_images=true
+image_size=50
+show=drun
+# Adjust the width and columns to your liking
+width=1000
+height=700
+columns=5
+# This hides the standard list-style search bar if you want a cleaner look
+orientation=vertical
