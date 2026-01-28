@@ -13,7 +13,7 @@ mkdir -p "$RECORD_DIR"
 send_notification() {
     TITLE="$1"
     BODY="$2"
-    notify-send -a "GPU Recorder" -i media-record -h "string:x-dunst-stack-tag:$NOTIFICATION_TAG" "$TITLE" "$BODY"
+    notify-send -a "Screen Recorder" -i media-record -h "string:x-dunst-stack-tag:$NOTIFICATION_TAG" "$TITLE" "$BODY"
 }
 
 # Check if a PID file exists and the process is still running
@@ -21,7 +21,7 @@ if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
     # Recording is running, so stop it
     PID=$(cat "$PID_FILE")
 
-    send_notification "Recording Stopped" "Video saved to: $RECORD_DIR"
+    send_notification "Recording Stopped" "Video saved!"
 
     # Send SIGINT to gracefully stop the recording
     kill -SIGINT "$PID" 
@@ -46,6 +46,6 @@ else
     # Save the PID of the last background process immediately
     echo $! > "$PID_FILE"
 
-    send_notification "Recording Started" "\nOutput: $OUTPUT_FILE"
+    send_notification "Recording Started!"
 
 fi
