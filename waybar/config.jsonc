@@ -1,13 +1,10 @@
 {
-    // Position the bar at the top
     "position": "top",
     
-    // Set bar-specific classes or styles
     "layer": "top", 
     "margin-top": 0,
     "margin-bottom": 0,
     
-    // Modules to be displayed
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces"
