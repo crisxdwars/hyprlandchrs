@@ -1,6 +1,5 @@
 /* General Waybar Styling */
 * {
-    /* Set the font family to the newly installed Nerd Font */
     font-family: "Hack Nerd Font", monospace; 
     
     font-size: 13px;
@@ -8,7 +7,6 @@
     color: #ffffff; 
 }
 
-/* Main Bar Container */
 #waybar {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
     border-bottom: 1px solid rgba(135, 135, 135, 0.137); /* A subtle color line at the bottom */
