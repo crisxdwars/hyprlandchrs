@@ -1,5 +1,5 @@
 #!/bin/bash
 while true; do
     caelestia shell -d
-    sleep 2
+    sleep 1
 done
