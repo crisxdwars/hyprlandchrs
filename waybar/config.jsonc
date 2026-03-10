@@ -4,7 +4,8 @@
     "layer": "top", 
     "margin-top": 0,
     "margin-bottom": 0,
-    
+
+
     "modules-left": [
         "custom/arch",
         "hyprland/workspaces"
