@@ -5,7 +5,7 @@
     ## Install each
 
     ***Top Bar***
-        ```sudo pacman -S waybar```
+        ```bash sudo pacman -S waybar```
     ***### Win + ALT + R Screen Recorder***
         ```sudo pacman -S gpu-screen-recorder```
     ***Top Bar***
