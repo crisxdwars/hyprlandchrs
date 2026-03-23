@@ -1,4 +1,4 @@
-# **Resources Instalations**
+## **Resources Instalations**
     ## Install Everything at once
     ```sudo pacman -S waybar gpu-screen-recorder wl-clipboard slurp ttf-hack-nerd zip unzip pavucontrol```
     
