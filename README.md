@@ -1,7 +1,7 @@
 # **Resources To Install**
-    ```bash
+
     sudo pacman -S waybar gpu-screen-recorder wl-clipboard slurp ttf-fira-code ttf-fira-code noto-fonts-cjk zip unzip pavucontrol
-    ```
+
 # ****Resource Guide****
 #     ***waybar = Its The Top Bar***
 #     ***gpu-screen-recorder = Graphics Based Screen Recorder***
