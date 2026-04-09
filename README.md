@@ -3,7 +3,7 @@
     sudo pacman -S waybar gpu-screen-recorder wl-clipboard slurp ttf-fira-code ttf-fira-code noto-fonts-cjk zip unzip pavucontrol
 
 ### ****Resource Guide****
-   waybar = Its The Top Bar<br/>
+   waybar = Its The Top Bar<br/><br/>
    gpu-screen-recorder = Graphics Based Screen Recorder<br/><br/>
    wl-clipboard & slurp = Resources For Screenshot System<br/><br/>
    ttf-hack-nerd = Font Used For Waybar<br/><br/>
