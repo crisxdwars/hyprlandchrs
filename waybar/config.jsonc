@@ -27,7 +27,7 @@
         },
         "scroll-step": 5,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "max-volume": 150 
+        "max-volume": 130 
     },
 
     "custom/arch": {
