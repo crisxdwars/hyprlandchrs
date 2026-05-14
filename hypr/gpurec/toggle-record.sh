@@ -1,40 +1,32 @@
 #!/bin/bash
 
 # --- Configuration ---
-RECORD_DIR="/home/chrs/Videos/records"
-LOG_FILE="/tmp/gpu-screen-recorder.log"
-PID_FILE="/tmp/gpu-screen-recorder.pid"
+RECORD_DIR="/home/$USER/Videos/records"
+LOCK_FILE="/tmp/gpu_recorder.lock"
+NOTIFICATION_TAG="gpurec-toggle"
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+OUTPUT_FILE="$RECORD_DIR/$TIMESTAMP.mp4"
 
-NOTIFICATION_TAG="gpurec-toggle" 
 mkdir -p "$RECORD_DIR"
 
-send_notification() {
-    TITLE="$1"
-    BODY="$2"
-    notify-send -a "Screen Recorder" -i media-record -h "string:x-dunst-stack-tag:$NOTIFICATION_TAG" "$TITLE" "$BODY"
-}
-
-if [ -f "$PID_FILE" ] && kill -0 $(cat "$PID_FILE") 2>/dev/null; then
-    PID=$(cat "$PID_FILE")
-
-    send_notification "Recording Stopped" "Video saved!"
-
-    kill -SIGINT "$PID" 
-    
-    sleep 0.5 
-
-    wait "$PID" 2>/dev/null
-    rm "$PID_FILE"
-
-else
-
-    TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
-    OUTPUT_FILE="$RECORD_DIR/$TIMESTAMP.mp4" # Using .mp4 container as per your example
-
-    gpu-screen-recorder -w screen -f 74 -a default_output -o "$OUTPUT_FILE" >> "$LOG_FILE" 2>&1 &
-    
-    echo $! > "$PID_FILE"
-
-    send_notification "Recording Started!"
-
+if [ -f "$LOCK_FILE" ]; then
+    pkill -SIGINT -x gpu-screen-recorder
+    rm "$LOCK_FILE"
+    sync
+    notify-send -a "Recorder" -t 2000 -h "string:x-dunst-stack-tag:$NOTIFICATION_TAG" \
+        "Recording Stopped" "Video saved to $RECORD_DIR"
+    exit 0
 fi
+
+touch "$LOCK_FILE"
+gpu-screen-recorder -w screen \
+    -f 75 \
+    -c mp4 \
+    -q ultra \
+    -k h264 \
+    -a default_output \
+    -v no \
+    -o "$OUTPUT_FILE" &
+
+notify-send -a "Recorder" -t 2000 -h "string:x-dunst-stack-tag:$NOTIFICATION_TAG" \
+    "Recording Started" "75 FPS | Ultra MP4"
