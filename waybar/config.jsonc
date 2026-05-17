@@ -1,23 +1,19 @@
 {
     "position": "top",
-    
     "layer": "top", 
     "margin-top": 0,
     "margin-bottom": 0,
 
-
-    "modules-left": [
+   // "modules-left": [],
+    "modules-center": [
         "custom/arch",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [],
-    "modules-right": [
+        "hyprland/workspaces",
         "tray", 
         "custom/clock",
         "pulseaudio" 
-        
     ],
 
+    // "modules-right": [],
     "pulseaudio": {
         "tooltip": false,
         "format": "{volume}%",
@@ -34,7 +30,7 @@
     "custom/arch": {
         "format": "",
         "tooltip": false,
-        "on-click": "#", 
+        "on-click": "wofi", 
         "on-click-middle": "#"
     },
     
