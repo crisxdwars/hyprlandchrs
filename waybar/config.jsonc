@@ -51,7 +51,7 @@
 
 "custom/clock": {
     "exec": "bash -c \"date '+%I:%M %p'\"",
-    "format": "| {} |",
+    "format": " {} ",
     "interval": 1,
     "tooltip": false
 }}
